@@ -1,0 +1,46 @@
+{
+  "name": "syncert-desktop",
+  "private": true,
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "Joyrudra Biswas",
+  "type": "module",
+  "packageManager": "pnpm@10.34.6",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.app.json && vite build",
+    "tauri": "tauri",
+    "test": "vitest run",
+    "test:integration": "pnpm --dir vendor/syncert-core --filter @syncert/server... build && vitest run --maxWorkers=1 test/relay.integration.test.ts",
+    "typecheck": "tsc -p tsconfig.app.json",
+    "format:check": "prettier --check .",
+    "cargo:test": "cargo test --manifest-path src-tauri/Cargo.toml"
+  },
+  "dependencies": {
+    "@syncert/core": "workspace:*",
+    "@syncert/crypto": "workspace:*",
+    "@syncert/protocol": "workspace:*",
+    "@tauri-apps/api": "^2.9.0",
+    "@tauri-apps/plugin-autostart": "^2.5.1",
+    "@tauri-apps/plugin-clipboard-manager": "^2.3.3",
+    "@tauri-apps/plugin-global-shortcut": "^2.3.1",
+    "@tauri-apps/plugin-store": "^2.4.2",
+    "qrcode": "^1.5.4",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.9.0",
+    "@types/node": "^24.19.2",
+    "@types/qrcode": "^1.5.6",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@types/ws": "^8.18.1",
+    "@vitejs/plugin-react": "^5.1.0",
+    "prettier": "^3.9.10",
+    "typescript": "~6.0.3",
+    "vite": "^7.2.0",
+    "vitest": "^5.1.0",
+    "ws": "^8.18.3"
+  }
+}

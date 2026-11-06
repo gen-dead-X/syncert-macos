@@ -1,0 +1,3 @@
+[submodule "vendor/syncert-core"]
+	path = vendor/syncert-core
+	url = https://github.com/gen-dead-X/syncert-core.git
