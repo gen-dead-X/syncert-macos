@@ -3,9 +3,7 @@ use objc2_foundation::NSString;
 
 pub fn is_sensitive_clipboard() -> bool {
     unsafe {
-        let Some(pasteboard) = NSPasteboard::generalPasteboard() else {
-            return false;
-        };
+        let pasteboard = NSPasteboard::generalPasteboard();
         let Some(types) = pasteboard.types() else {
             return false;
         };
