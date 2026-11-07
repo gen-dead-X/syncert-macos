@@ -1,0 +1,5 @@
+packages:
+  - .
+  - vendor/syncert-core/packages/*
+  - vendor/syncert-core/apps/*
+ignoredBuiltDependencies: [better-sqlite3, esbuild]
